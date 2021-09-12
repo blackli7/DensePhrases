@@ -10,6 +10,11 @@ export DATA_DIR=$BASE_DIR/densephrases-data
 export SAVE_DIR=$BASE_DIR/outputs
 export CACHE_DIR=$BASE_DIR/cache
 
+mkdir -p $DATA_DIR
+mkdir -p $SAVE_DIR
+mkdir -p $SAVE_DIR/logs
+mkdir -p $CACHE_DIR
+
 printf "\nEnvironment variables are set as follows:\n"
 echo "DATA_DIR=$DATA_DIR"
 echo "SAVE_DIR=$SAVE_DIR"
