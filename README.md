@@ -32,7 +32,6 @@
 首先请安装好conda
 
 官网安装：https://www.anaconda.com
-
 博客指导：https://www.jianshu.com/p/edaa744ea47d
 
 创建DensePhrases项目的conda环境，并安装好所需工具包
