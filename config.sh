@@ -36,5 +36,5 @@ while read -p "Add to ~/.bashrc (recommended)? [yes/no]: " choice; do
 done
 
 wget -O "$SAVE_DIR/densephrases-multi.tar.gz" "https://nlp.cs.princeton.edu/projects/densephrases/models/densephrases-multi.tar.gz"
-tar -xzvf "$SAVE_DIR/densephrases-multi.tar.gz" -C "$SAVE_DIR" --strip 1
+tar -xzvf "$SAVE_DIR/densephrases-multi.tar.gz" -C "$SAVE_DIR/densephrases-multi" --strip 1
 rm "$SAVE_DIR/densephrases-multi.tar.gz"
