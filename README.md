@@ -39,9 +39,10 @@ conda activate densephrases
 conda install pytorch=1.7.1 cudatoolkit=11.0 -c pytorch
 
 # Install densephrases for course of UCAS
-git clone https://github.com/princeton-nlp/DensePhrases.git
+git clone https://github.com/blackli7/DensePhrases.git
 
 # Install apex
+git clone https://www.github.com/nvidia/apex.git
 cd apex
 python setup.py install
 cd ..
@@ -126,7 +127,7 @@ DensePhrases所使用的训练数据必须满足以下json格式:（具体见：
 
 
 ## 问题反馈
-如遇到任何问题，可以直接询问课程老师和助教，或者联系我`(lilingwei：1600012841@pku.edu.cn)`，你也可以直接通过发起Github Issue发布相关问题，我会尽量及时回复。
+如遇到任何问题，可以直接询问课程老师和助教，或者联系我`(lilingwei：lilingwei20@mails.ucas.ac.cn)`，你也可以直接通过发起Github Issue发布相关问题，我会尽量及时回复。
 
 ## Reference
 Please cite the paper if you use DensePhrases in your work:
