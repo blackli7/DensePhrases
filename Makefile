@@ -491,3 +491,51 @@ strip-kilt: zsre-gold
 	python scripts/kilt/strip_pred.py \
 		$(INPUT_PRED) \
 		$(GOLD_FILE)	
+
+
+
+#The following instructions are for students in course of professor Luo Tiejian(UCAS).
+
+#step1: to do the prediction of samples
+step1:
+	python generate_phrase_vecs.py \
+		--model_type bert \
+		--pretrained_name_or_path SpanBERT/spanbert-base-cased \
+		--data_dir ./ \
+		--cache_dir $(CACHE_DIR) \
+		--predict_file sample/articles.json \
+		--do_dump \
+		--max_seq_length 512 \
+		--doc_stride 500 \
+		--fp16 \
+		--filter_threshold -2.0 \
+		--append_title \
+		--load_dir $(SAVE_DIR)/densephrases-multi \
+		--output_dir $(SAVE_DIR)/densephrases-multi_sample
+	python build_phrase_index.py \
+		$(SAVE_DIR)/densephrases-multi_sample/dump all \
+		--replace \
+		--num_clusters 32 \
+		--fine_quant OPQ96 \
+		--doc_sample_ratio 1.0 \
+		--vec_sample_ratio 1.0 \
+		--cuda
+	python scripts/preprocess/compress_metadata.py \
+		--input_dump_dir $(SAVE_DIR)/densephrases-multi_sample/dump/phrase \
+		--output_dir $(SAVE_DIR)/densephrases-multi_sample/dump
+	python eval_phrase_retrieval.py \
+		--run_mode eval \
+		--cuda \
+		--dump_dir $(SAVE_DIR)/densephrases-multi_sample/dump \
+		--index_dir start/32_flat_OPQ96 \
+		--query_encoder_path $(SAVE_DIR)/densephrases-multi \
+		--test_path sample/questions.json \
+		--save_pred \
+		--truecase
+
+#step1: to test the prediction of samples
+step1_test:
+	python step1_test_with_question.py \
+		--dump_dir $(SAVE_DIR)/densephrases-multi_sample/dump \
+    	--index_dir start/32_flat_OPQ96 \
+    	--query_encoder_path $(SAVE_DIR)/densephrases-multi
