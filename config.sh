@@ -13,6 +13,7 @@ export CACHE_DIR=$BASE_DIR/cache
 mkdir -p $DATA_DIR
 mkdir -p $SAVE_DIR
 mkdir -p $SAVE_DIR/logs
+mkdir -p $SAVE_DIR/densephrases-multi
 mkdir -p $CACHE_DIR
 
 printf "\nEnvironment variables are set as follows:\n"
