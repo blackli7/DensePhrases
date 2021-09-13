@@ -10,10 +10,17 @@ export DATA_DIR=$BASE_DIR/densephrases-data
 export SAVE_DIR=$BASE_DIR/outputs
 export CACHE_DIR=$BASE_DIR/cache
 
-mkdir -p $DATA_DIR
-mkdir -p $SAVE_DIR
-mkdir -p $SAVE_DIR/logs
-mkdir -p $CACHE_DIR
+if [ ! -d "$DATA_DIR" ]; then
+    mkdir -p $DATA_DIR
+fi
+if [ ! -d "$SAVE_DIR" ]; then
+    mkdir -p $SAVE_DIR
+    mkdir -p $SAVE_DIR/logs
+    mkdir -p $SAVE_DIR/densephrases-multi
+fi
+if [ ! -d "$CACHE_DIR" ]; then
+    mkdir -p $CACHE_DIR
+fi
 
 printf "\nEnvironment variables are set as follows:\n"
 echo "DATA_DIR=$DATA_DIR"
@@ -35,6 +42,8 @@ while read -p "Add to ~/.bashrc (recommended)? [yes/no]: " choice; do
     esac
 done
 
-wget -O "$SAVE_DIR/densephrases-multi.tar.gz" "https://nlp.cs.princeton.edu/projects/densephrases/models/densephrases-multi.tar.gz"
-tar -xzvf "$SAVE_DIR/densephrases-multi.tar.gz" -C "$SAVE_DIR" --strip 1
-rm "$SAVE_DIR/densephrases-multi.tar.gz"
+if [ ! -d "$SAVE_DIR/densephrases-multi" ]; then
+    wget -O "$SAVE_DIR/densephrases-multi.tar.gz" "https://nlp.cs.princeton.edu/projects/densephrases/models/densephrases-multi.tar.gz"
+    tar -xzvf "$SAVE_DIR/densephrases-multi.tar.gz" -C "$SAVE_DIR/densephrases-multi" --strip 1
+    rm "$SAVE_DIR/densephrases-multi.tar.gz"
+fi

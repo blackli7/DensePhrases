@@ -1,12 +1,13 @@
 # 高级软件工程（UCAS）课程项目——NLP方向
 
+课程信息：2021~2022秋季学期 中国科学院大学 计算机科学与技术学院 高级软件工程 罗铁坚教授
 
 本次NLP方向课程项目，旨在通过前沿学术成果，帮助同学们分三步：通过接触、理解、改进领域前沿工作，深刻体会NLP模型的基础框架及应用场景。在提高软件工程能力的同时，能够触摸到人工智能算法学术界的一些门路，最后达到开阔视野，增强底蕴的目的。
 
 #### 更新于
 **\*\*\*\*\* 2021.09.12 \*\*\*\*\***
 
-**\*\*\*\*\* by lilingwei（1600012841@pku.edu.cn）\*\*\*\*\***
+**\*\*\*\*\* by lilingwei（lilingwei20@mails.ucas.ac.cn）\*\*\*\*\***
 
 ## 目录
 * [项目介绍](#项目介绍)
@@ -30,6 +31,9 @@
 ### 1.安装环境
 首先请安装好conda
 
+（官网安装：https://www.anaconda.com ）
+（博客指导：https://www.jianshu.com/p/edaa744ea47d ）
+
 创建DensePhrases项目的conda环境，并安装好所需工具包
 ```bash
 # Install torch with conda (remember to check your CUDA version)
@@ -52,13 +56,25 @@ pip install -r requirements.txt
 python setup.py develop
 ```
 
-设置相关环境变量（建议一路‘yes’）
+设置相关环境变量（一路‘yes’）
 ```bash
 # Running config.sh will set the following three environment variables:
 # DATA_DIR: for datasets
 # SAVE_DIR: for pre-trained models or index; new models and index will also be saved here
 # CACHE_DIR: for cache files from huggingface transformers
 source config.sh
+```
+
+检查一下正确性
+```bash
+# Check if all downloads are complete
+pip list
+# Check if you can see these information on the console.
+apex faiss-gpu torch transformers ...
+# Check config
+echo $SAVE_DIR
+# Check if you can see these information on the console.
+.//outputs
 ```
 
 ### 2.建立Sample模型
@@ -70,6 +86,11 @@ source config.sh
 make step1
 ```
 
+完成后会在命令台看到如下信息：
+<div align="left">
+  <img alt="step1" src="https://github.com/blackli7/DensePhrases/tree/main/pic_files/step1.jpg" width="750px">
+</div>
+
 ### 3.测试Sample模型
 通过用户输入实际问题检验模型质量。
 ```bash
@@ -77,6 +98,10 @@ make step1
 # output the answer, but write details in 'sample/step1_question_test_out.json'
 make step1_test
 ```
+
+完成后会在命令台看到如下信息：
+
+输入后回车，经过一段时间后模型会输出答案：
 
 ## Step2 项目应用
 本环节将在前一环节上，对已有项目的简易模型Demo进行改进，增强其鲁棒性和实用性，具体表现在针对某一领域知识能够具备不错的问答能力，或者对齐模型的实效性，具体将在以下部分阐述，课程项目仅要求在2，3部分中选一个完成。
