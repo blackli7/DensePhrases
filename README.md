@@ -88,7 +88,7 @@ make step1
 
 完成后会在命令台看到如下信息：
 <div align="left">
-  <img alt="step1" src="https://github.com/blackli7/DensePhrases/tree/main/pic_files/step1.jpg" width="750px">
+  <img alt="step1" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1.jpg" width="750px">
 </div>
 
 ### 3.测试Sample模型
