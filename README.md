@@ -108,7 +108,7 @@ make step1_test
   <img alt="step1_test_q" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_q.jpg" width="750px">
 </div>
 <div align="left">
-  <img alt="step1_test_a" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_a.jpg" width="750px">
+  <img alt="step1_test_a" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_a.jpg" width="450px">
 </div>
 
 ## Step2 项目应用
