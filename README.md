@@ -83,6 +83,7 @@ echo $SAVE_DIR
 # generate phrase vectors
 # build phrase index
 # evaluate phrase retrieval
+# (try it more times if something goes wrong.)
 make step1
 ```
 
