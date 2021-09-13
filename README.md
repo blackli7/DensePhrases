@@ -139,19 +139,21 @@ DensePhrases所使用的训练数据必须满足以下json格式:（具体见：
 此部分为课程项目核心要求，希望同学们亲自动手，通过专业化项目模型来增强模型在某一领域的鲁棒性。具体将按照以下步骤进行：1）首先，要构造出准确的测试用例以反映模型的问题；2）其次，找到相应可解决数据集，对模型原始数据集进行更新，重新训练，得到专业化后的新模型；3）再次输入1）中相同测试用例，模型此次的输出能够有了不少好转。
 
 下面是实现的一个例子：
+
+----------------------------
+
 1.测试用例: What is Newton's First Law?
 <div align="left">
-  <img alt="Newtons_pre" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/Newtons_pre.jpg" width="750px">
+  <img alt="Newtons_pre" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/Newtons_pre.jpg" width="450px">
 </div>
 显然，系统不明所以。
-
 2.更换/增强fine-tuning数据集（./sample）
 
-3.重新训练（step1）
+3.重新训练（[step1](#项目建立)）
 
 4.再次输入相同测试用例：What is Newton's First Law?
 <div align="left">
-  <img alt="Newtons_now" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/Newtons_now.jpg" width="750px">
+  <img alt="Newtons_now" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/Newtons_now.jpg" width="450px">
 </div>
 这一次，模型输出正确结果。
 
@@ -159,24 +161,24 @@ DensePhrases所使用的训练数据必须满足以下json格式:（具体见：
 此部分为增强项目模型鲁棒性的另一方面————时效对齐。同2部分一样，我们具体仍将按照以下步骤进行：1）首先，要构造出准确的测试用例以反映模型的问题；2）其次，找到相应可解决数据集，对模型原始数据集进行更新，重新训练，得到专业化后的新模型；3）再次输入1）中相同测试用例，模型此次的输出能够有了不少好转。
 
 下面是实现的一个例子：
+
+----------------------------
+
 1.测试用例: Which team does Christiano Ronaldo play for now?
 <div align="left">
-  <img alt="Ronaldo_pre" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/Ronaldo_pre.jpg" width="750px">
+  <img alt="Ronaldo_pre" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/Ronaldo_pre.jpg" width="450px">
 </div>
 显然，这个信息是不符合实际情况的（C罗于2021.08.28回到曼联）
 
 2.更换/增强fine-tuning数据集（./sample）
 
-3.重新训练（step1）
+3.重新训练（[step1](#项目建立)）
 
 4.再次输入相同测试用例：Which team does Christiano Ronaldo play for now?
 <div align="left">
-  <img alt="Ronaldo_now" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/Ronaldo_now.jpg" width="750px">
+  <img alt="Ronaldo_now" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/Ronaldo_now.jpg" width="450px">
 </div>
 这一次，模型输出正确结果。
-
-
-
 
 ## Step3 项目拓展
 本环节将继续在前一环节上，对已有项目的简易模型Demo进行进一步的改进。这一部分更为开放，同学们可以灵活运用软件工程知识，或结合所学知识，使模型在某一维度上产生更好的效果即可，包括但不限于：准确度、召回率、速度、内容丰富度、可移植性、可扩展性、模型复现、演示Demo、语言迁移等，甚至是项目或README逻辑改进都是被接受的，只要保证有意义即可。同样的，我们提供以下三个方向作为参考：
