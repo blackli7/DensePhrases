@@ -16,7 +16,6 @@ fi
 if [ ! -d "$SAVE_DIR" ]; then
     mkdir -p $SAVE_DIR
     mkdir -p $SAVE_DIR/logs
-    mkdir -p $SAVE_DIR/densephrases-multi
 fi
 if [ ! -d "$CACHE_DIR" ]; then
     mkdir -p $CACHE_DIR
@@ -44,6 +43,7 @@ done
 
 if [ ! -d "$SAVE_DIR/densephrases-multi" ]; then
     wget -O "$SAVE_DIR/densephrases-multi.tar.gz" "https://nlp.cs.princeton.edu/projects/densephrases/models/densephrases-multi.tar.gz"
+    mkdir -p "$SAVE_DIR/densephrases-multi"
     tar -xzvf "$SAVE_DIR/densephrases-multi.tar.gz" -C "$SAVE_DIR/densephrases-multi" --strip 1
     rm "$SAVE_DIR/densephrases-multi.tar.gz"
 fi
