@@ -123,7 +123,7 @@ if __name__ == "__main__":
     parser.add_argument('--seed', default=1992, type=int)
 
     #query encoder for step1
-    parser.add_argument('--question_test_out', default='step1_question_test_out.json')
+    parser.add_argument('--question_test_out', default='sample/step1_question_test_out.json')
 
     args = parser.parse_args()
 
