@@ -147,7 +147,7 @@ DensePhrases所使用的训练数据必须满足以下json格式:（具体见：
 </div>
 -----显然，系统不明所以-----
 
-2.更换/增强fine-tuning数据集（./sample）
+2.更换/增强fine-tuning数据集（./sample/article.json）
 
 3.重新训练（[step1](#项目建立)）
 
@@ -169,7 +169,7 @@ DensePhrases所使用的训练数据必须满足以下json格式:（具体见：
 </div>
 -----显然，这个信息是不符合实际情况的（C罗于2021.08.28回到曼联）-----
 
-2.更换/增强fine-tuning数据集（./sample）
+2.更换/增强fine-tuning数据集（./sample/article.json）
 
 3.重新训练（[step1](#项目建立)）
 
