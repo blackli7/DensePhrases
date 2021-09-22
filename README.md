@@ -1,8 +1,9 @@
-# 高级软件工程（UCAS）课程项目——NLP方向
+# DensePhrases Demo
 
-课程信息：2021~2022秋季学期 中国科学院大学 计算机科学与技术学院 高级软件工程 罗铁坚教授
+<em>DensePhrases</em> 是一项由Korea University和Princeton University联合完成的，基于短语级的英文文本匹配（召回）模型，面向于NLP中“开放域问答”和“阅读理解”任务。其项目[论文](https://arxiv.org/abs/2012.12624)被收录于ACL2021，你也可以直接通过其[Github项目地址](https://github.com/princeton-nlp/DensePhrases)来了解此模型，或使用其面向维基百科(2018.12.20)数据所训练的[Demo](http://densephrases.korea.ac.kr)来切身体会。
 
-本次NLP方向课程项目，旨在通过前沿学术成果，帮助同学们分三步：通过接触、理解、改进领域前沿工作，深刻体会NLP模型的基础框架及应用场景。在提高软件工程能力的同时，能够触摸到人工智能算法学术界的一些门路，最后达到开阔视野，增强底蕴的目的。
+<!--课程信息：2021~2022秋季学期 中国科学院大学 计算机科学与技术学院 高级软件工程 罗铁坚教授
+本次NLP方向课程项目，旨在通过前沿学术成果，帮助同学们分三步：通过接触、理解、改进领域前沿工作，深刻体会NLP模型的基础框架及应用场景。在提高软件工程能力的同时，能够触摸到人工智能算法学术界的一些门路，最后达到开阔视野，增强底蕴的目的。-->
 
 #### 更新于
 **\*\*\*\*\* 2021.09.12 \*\*\*\*\***
@@ -10,29 +11,28 @@
 **\*\*\*\*\* by lilingwei（lilingwei20@mails.ucas.ac.cn）\*\*\*\*\***
 
 ## 目录
-* [Step0-模型介绍](#模型介绍)
+* [Step0-安装环境](#安装环境)
 * [Step1-项目建立](#项目建立)
-* [Step2-项目应用](#项目应用)
-* [Step3-项目拓展](#项目拓展)
+* [Step2-训练Demo](#训练Demo)
+* [Step3-测试Demo](#测试Demo)
+* [FAQ](#FAQ)
 * [问题反馈](#问题反馈)
 * [Reference](#Reference)
 * [License](#License)
 
 
-## 模型介绍
-<em>DensePhrases</em> 是一项由Korea University和Princeton University联合完成的，基于短语级的英文文本匹配（召回）模型，面向于自然语言理解（下称NLP）中“开放域问答”和“阅读理解”任务。其项目[论文](https://arxiv.org/abs/2012.12624)被收录于ACL2021，你也可以直接通过其[Github项目地址](https://github.com/princeton-nlp/DensePhrases)来了解此模型，或使用其面向维基百科(2018.12.20)数据所训练的[Demo](http://densephrases.korea.ac.kr)来切身体会。
+## 安装环境
+<!--本次NLP课程项目之所以选择面向“开放域问答”任务和“阅读理解”任务，也是继承了课程以往所使用的“对话机器人”项目的特点，希望能够让同学们感受到领域知识对现实生活的影响，以及未来可能的“强AI”时代所必不可少的环节。
 
-本次NLP课程项目之所以选择面向“开放域问答”任务和“阅读理解”任务，也是继承了课程以往所使用的“对话机器人”项目的特点，希望能够让同学们感受到领域知识对现实生活的影响，以及未来可能的“强AI”时代所必不可少的环节。
+同时，本项目 <em>DensePhrases</em> 出自NLP大牛[陈丹琪](https://www.cs.princeton.edu/~danqic/)及其实验室之手，项目完整饱满，代码流畅规范，建议同学们能够同时好好欣赏并学习这些细节。-->
 
-同时，本项目 <em>DensePhrases</em> 出自NLP大牛[陈丹琪](https://www.cs.princeton.edu/~danqic/)及其实验室之手，项目完整饱满，代码流畅规范，建议同学们能够同时好好欣赏并学习这些细节。
-
-## 项目建立
-本环节希望通过指导同学们如何安装项目环境，建立简易模型Demo，并亲自测试，来感受“项目建立”这项最基础的工作。
-### 1.安装环境
 首先请安装好conda
 
 （官网安装：https://www.anaconda.com ）
+
 （博客指导：https://www.jianshu.com/p/edaa744ea47d ）
+
+## 项目建立
 
 创建DensePhrases项目的conda环境，并安装好所需工具包
 ```bash
@@ -67,18 +67,41 @@ source config.sh
 
 检查一下正确性
 ```bash
-# Check if all downloads are complete
+# Check downloads
 pip list
-# Check if you can see these information on the console.
+# If yes, you can see these information on the console.
 apex faiss-gpu torch transformers ...
 # Check config
 echo $SAVE_DIR
-# Check if you can see these information on the console.
+# If yes, you can see these information on the console.
 .//outputs
 ```
 
-### 2.建立Sample模型
+
+## 训练Demo
 通过项目中已训练好的预训练模型`densephrases-multi` 在四篇短文语料库(`sample/articles.json`)上建立简单模型.
+
+DensePhrases所使用的训练数据必须满足以下json格式:（具体见：sample/articles.json）
+```
+{
+    "data": [
+        {
+            "title": "America's Got Talent (season 4)",
+            "paragraphs": [
+                {
+                    "context": " The fourth season of \"America's Got Talent\", ... Country singer Kevin Skinner was named the winner on September 16, 2009 ..."
+                },
+                {
+                    "context": " Season four was Hasselhoff's final season as a judge. This season started broadcasting live on August 4, 2009. ..."
+                },
+                ...
+            ]
+        },
+    ]
+}
+```
+
+运行以下命令，训练模型
 ```bash
 # generate phrase vectors
 # build phrase index
@@ -92,8 +115,8 @@ make step1
   <img alt="step1" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1.jpg" width="750px">
 </div>
 
-### 3.测试Sample模型
-通过用户输入实际问题检验模型质量。
+## 测试Demo
+通过命令台输入测试Demo模型。
 ```bash
 # evaluate phrase retrieval with input question
 # output the answer, but write details in 'sample/step1_question_test_out.json'
@@ -104,7 +127,7 @@ make step1_test
 <div align="left">
   <img alt="step1_test" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test.jpg" width="750px">
 </div>
-输入后回车，经过一段时间后模型会输出答案：
+输入问题文本，回车，经过一段时间后模型会输出答案：
 <div align="left">
   <img alt="step1_test_q" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_q.jpg" width="750px">
 </div>
@@ -112,7 +135,7 @@ make step1_test
   <img alt="step1_test_a" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_a.jpg" width="450px">
 </div>
 
-## 项目应用
+<!--## 项目应用
 本环节将在前一环节上，对已有项目的简易模型Demo进行改进，增强其鲁棒性和实用性，具体表现在针对某一领域知识能够具备不错的问答能力，或者对齐模型的实效性，具体将在以下部分阐述，课程项目仅要求在2，3部分中选一个完成。
 
 ### 1.数据集
@@ -187,9 +210,9 @@ DensePhrases所使用的训练数据必须满足以下json格式:（具体见：
 
 ### 2.模型复现：
 
-### 3.演示Demo：
+### 3.演示Demo：-->
 
-
+## FAQ
 
 ## 问题反馈
 如遇到任何问题，可以直接询问课程老师和助教，或者联系我`(lilingwei：lilingwei20@mails.ucas.ac.cn)`，你也可以直接通过发起Github Issue发布相关问题，我会尽量及时回复。
