@@ -1,0 +1,275 @@
+body{
+    background: antiquewhite;
+}
+.main{
+    width: 100%;
+    padding: 30px 0px;
+}
+.main .main-box{
+    width: 1200px;
+    /*height: 2000px;*/
+    background: antiquewhite;
+    margin: auto;
+}
+.main .main-box .main-contain{
+    float: left;
+    width: 800px;
+}
+
+/*banner轮播图*/
+.main .main-box .main-contain .banner{
+    width: 800px;
+    height: 200px;
+    position: relative;
+    background: aquamarine;
+}
+.main .main-box .main-contain .banner .pic li{
+    /*不加absolute,fadein/out切换时会占用下一行空间*/
+    position: absolute;
+    display: none;
+}
+.main .main-box .main-contain .banner .pic li a img{
+    width: 800px;
+    height: 200px;
+}
+.main .main-box .main-contain .banner .tab{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -78px;
+}
+.main .main-box .main-contain .banner .tab li{
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    border-radius: 50%;
+    float: left;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.main .main-box .main-contain .banner .tab .active {
+    background: white;
+}
+.main .main-box .main-contain .banner .tab li:hover{
+    background: white;
+}
+.main .main-box .main-contain .banner .btn li{
+    position: absolute;
+    height: 200px;
+    line-height: 200px;
+    cursor: pointer;
+    display: none;
+}
+.main .main-box .main-contain .banner .btn li i{
+    font-size: 50px;
+    color: white;
+}
+.main .main-box .main-contain .banner .btn .left{
+    left: 10px;
+}
+.main .main-box .main-contain .banner .btn .right{
+    right: 10px;
+}
+.main .main-box .main-contain .banner:hover .btn li{
+    display: block;
+}
+.pane{
+    color: #3e8f3e;
+}
+/*三个框*/
+.main .main-box .main-contain .content{
+    width: 800px;
+    background: lightgrey;
+    font-size: 14px;
+    color: black;
+}
+.main .main-box .main-contain .content .recommend-news{
+    display: flex;
+    justify-content: space-between;
+    /*如果设置margin,由于oontent没有border而无法显示上边距*/
+    padding: 20px 15px 10px 15px;
+
+
+
+    color: #761c19;
+    background-color: #761c19;
+}
+.main .main-box .main-contain .content .recommend-news.pane{
+    color: #761c19;
+}
+.main .main-box .main-contain .content .recommend-news li a img{
+    width: 250px;
+    height: 180px;
+    /*1s慢动作 结合transform: scale*/
+    transition: all 1s;
+}
+.main .main-box .main-contain .content .recommend-news li p{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+/*overflow必须设置大小,因此不能设置在li，否则影响p*/
+/*设在a就需要置block*/
+/*>是子代选择器,不会影响p里面的a*/
+.main .main-box .main-contain .content .recommend-news li>a{
+    display: block;
+    width: 250px;
+    height: 180px;
+    overflow: hidden;
+}
+.main .main-box .main-contain .content .recommend-news li:hover a img{
+    transform: scale(1.2);
+}
+
+/*新闻*/
+.main .main-box .main-contain .news .nav{
+    width: 800px;
+    height: 50px;
+    line-height: 50px;
+    background: darkgrey;
+}
+.main .main-box .main-contain .news .nav li{
+    float: left;
+    margin-right: 30px;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.main .main-box .main-contain .news .nav .active{
+    border-bottom: 4px solid yellow;
+    box-sizing: border-box;
+}
+.main .main-box .main-contain .news .content{
+    width: 800px;
+    background: lightgrey;
+}
+.main .main-box .main-contain .news .content .left{
+    float: left;
+    width: 260px;
+    height: 200px;
+    margin: 10px 10px 10px 10px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.main .main-box .main-contain .news .content .right{
+    float: left;
+    margin: 10px 0 10px 0;
+    line-height: 50px;
+    font-size: 15px;
+}
+.main .main-box .main-contain .news .content .right span{
+    color: red;
+}
+.main .main-box .main-contain .news .content li{
+    display: none;
+}
+.main .main-box .main-contain .news .content li .left img{
+    width: 260px;
+    height: 200px;
+    transition: all 1s;
+}
+.main .main-box .main-contain .news .content li .left:hover img{
+    transform: scale(1.2);
+}
+.main .main-box .main-contain .more{
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 20px;
+    background: darkgrey;
+    margin: 20px auto;
+    color: blue;
+    cursor: pointer;
+}
+
+/*右边*/
+.main .main-box .aside{
+    float: right;
+    width: 360px;
+    /*height: 800px;*/
+    background: lightgrey;
+}
+.main .main-box .aside .course div img{
+    width: 320px;
+    /*height: 192px;*/
+    margin-left: 20px;
+}
+.main .main-box .aside .course p{
+    width: 360px;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 20px;
+}
+.main .main-box .aside .course p span{
+    float: right;
+    margin-right: 20px;
+    color: blue;
+}
+.main .main-box .aside .about{
+    width: 360px;
+    background: url("http://onj3s3zfw.bkt.clouddn.com/o_1cggt7lvb1ovi1l1g1ucu8nl1spc7.jpg") no-repeat 170px 20px/100px 100px;
+}
+.main .main-box .aside .about h2{
+    text-indent: 2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.main .main-box .aside .about p{
+    width: 360px;
+    line-height: 40px;
+    text-indent: 20px;
+}
+.main .main-box .aside .about p i{
+    font-size: 24px;
+    vertical-align: -3px;
+}
+.main .main-box .aside .about p span{
+    float: right;
+    margin-right: 108px;
+    font-size: 95%;
+}
+.main .main-box .aside .recommend h2{
+    text-indent: 2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.main .main-box .aside .recommend .hot{
+    margin-bottom: 10px;
+}
+.main .main-box .aside .recommend .hot .left{
+    float: left;
+    width: 200px;
+    height: 90px;
+    margin-left: 20px;
+}
+.main .main-box .aside .recommend .hot .right{
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.main .main-box .aside .recommend .hot .left .upper{
+    width: 200px;
+    height: 56px;
+    line-height: 28px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.main .main-box .aside .recommend .hot .left .lower{
+    width: 200px;
+    font-size: 95%;
+    margin-bottom: 10px;
+}
+.main .main-box .aside .recommend .hot .left .lower span{
+    float: right;
+    margin-right: 10px;
+}
+.main .main-box .aside .recommend .hot img{
+    width: 110px;
+    height: 70px;
+}

@@ -1,0 +1,998 @@
+@font-face {
+    font-family: 'FZSKBXKK';
+    /*src: url('dist/FZSKBXKK.TTF');*/
+}
+
+div.nav {
+    position: fixed;
+    background: #31708f;
+    width: 100%;
+    height: 3.5%;
+    left: 0;
+    top: 0;
+}
+
+div.nav div{
+    position: absolute;
+    right: 16%;
+    top: 0%;
+    height: 100%;
+    /*font-family: FZSKBXKK, KaiTi;*/
+    font-size: 12px;
+    color: #ffffff;
+}
+
+div.nav div a {
+    position: relative;
+    height: 100%;
+    top: 50%;
+    transform: translate(0, -25%);
+    vertical-align: middle;
+    display: inline-block;
+    padding: 0 15px 0 15px;
+    text-decoration: none;
+    color: white;
+}
+
+div.head {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 7.6%;
+    width: 60%;
+}
+
+div.head div.logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    height: 100%;
+    width: 20%;
+}
+
+div.head div.logo div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 80%;
+}
+
+div.head div.logo div span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    font-family: FZSKBXKK, KaiTi;
+    font-size: 20px;
+}
+
+body {
+    /*background-image: url('dist/images/background.png');*/
+    background-attachment: fixed;
+}
+
+div.about {
+    position: fixed;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 60%;
+    width: 60%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+div.about div.scroll {
+    position: absolute;
+    left: 0;
+    top: 0;
+    /*height: auto + 20vh;*/
+    width: 100%;
+}
+
+div.about div.scroll div.intro {
+    position: relative;
+    height: 30vh;
+    width: 100%;
+}
+
+div.about div.scroll div.intro div.block {
+    position: absolute;
+    top: 8%;
+    width: 33%;
+    height: 100%;
+    display: inline-block;
+}
+
+div.about div.scroll div.intro div.block span {
+    position: absolute;
+    left: 8%;
+    top: 5%;
+    font-family: FZSKBXKK, KaiTi;
+    color: white;
+}
+
+div.about div.scroll div.intro div.block p {
+    position: relative;
+    top: 5%;
+    left: 2%;
+    font-family: FZSKBXKK, KaiTi;
+    padding: 0 8%;
+    line-height: 200%;
+    font-size: 12px;
+    font-weight: 600;
+    /* text-indent: 2em; */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+div.about div.scroll div.timeline {
+    position: relative;
+    height: auto;
+    width: 100%;
+    top: 12.5vh;
+}
+
+div.about div.scroll div.timeline img {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    border: none;
+}
+
+div.about div.scroll div.help {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 50vw;
+    height: 18vh;
+    background: #eee5de;
+    display: block;
+    margin-top: 3vh;
+}
+
+div.about div.scroll div.help div.left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+}
+
+div.about div.scroll div.help div.left img {
+    position: relative;
+    left: 5%;
+    top: 1vh;
+}
+
+div.about div.scroll div.help div.left span {
+    position: relative;
+    left: 12%;
+    top: -10%;
+    font-family: FZSKBXKK, KaiTi;
+    color: white;
+    display: block;
+}
+
+div.about div.scroll div.help div.left p {
+    position: relative;
+    top: -5%;
+    left: 3%;
+    font-family: FZSKBXKK, KaiTi;
+    padding: 0 8%;
+    line-height: 200%;
+    font-size: 12px;
+    font-weight: 600;
+    /* text-indent: 2em; */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+div.about div.scroll div.help img.right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: #31708f;
+}
+
+div.circle {
+    position: relative;
+    float: left;
+    width: 6vw;
+    height: 6vw;
+    background-color: #a9957b;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+}
+
+div.selected {
+    background-color: #31708f;
+}
+
+div.circle a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+div.circle div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: FZSKBXKK, KaiTi;
+    color: white;
+    cursor: pointer;
+}
+
+div.select {
+    background: #31708f;
+}
+
+div.bar {
+    position: fixed;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+div.yan {
+    position: fixed;
+    height: 5.5vh;
+    width: 62vw;
+    top: 31vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    background: white;
+}
+
+div.yan div {
+    position: absolute;
+    height: 3vh;
+    width: 8vw;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-family: FZSKBXKK, KaiTi;
+    text-align: center;
+    color: #765d3f;
+}
+
+div.yan .selected {
+    background: #31708f;
+    color: white;
+}
+
+div.style .selected-1 {
+    background: #a54e33;
+    color: white;
+}
+
+div.yan .selected-1 {
+    background: #6a0403;
+    color: white;
+}
+
+div.yan div span {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -30%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+div.yan div a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+div.cangtou {
+    position: fixed;
+    height: 10vh;
+    width: 62vw;
+    top: 31vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    background: white;
+}
+
+div.cangtou div {
+    position: absolute;
+    height: 3vh;
+    width: 8vw;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-family: FZSKBXKK, KaiTi;
+    text-align: center;
+    color: #765d3f;
+}
+
+div.cangtou .selected {
+    background: #31708f;
+    color: white;
+}
+
+div.cangtou .selected-1 {
+    background: #6a0403;
+    color: white;
+}
+
+div.cangtou div span {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -30%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+div.cangtou div.qinggan div span {
+    width: 3vw;
+    height: 1.2vw;
+    transform: translate(0, -40%);
+    z-index: 10;
+    cursor: pointer;
+}
+
+div.cangtou div.qinggan div span.selected-2{
+    background: #31708f;
+    color: white;
+    /*color:rgba(238,238,238,1);*/
+    z-index: 10;
+    cursor: pointer;
+}
+
+div.cangtou div a {
+    position: relative;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    top: 20%;
+}
+
+div.cangtou div.qinggan {
+    position: absolute;
+    height: 3vh;
+    width: 45vw;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-family: FZSKBXKK, KaiTi;
+    text-align: center;
+    color: #765d3f;
+}
+
+div.cangtou div.qinggan div {
+    position: absolute;
+    /*height: 3vh;*/
+    width: 100%;
+    top: 50%;
+    /*transform: translate(0, -50%);*/
+    /*font-family: FZSKBXKK, KaiTi;*/
+    /*text-align: center;*/
+    /*color: #765d3f;*/
+}
+
+div.cangtou div.qinggan span{
+}
+
+div.cangtou div.qinggan div img {
+    padding-top:0.6vh;
+    height: 1.7vh;
+    width: 80%;
+}
+
+div.cangtou div img.updown {
+    cursor: pointer;
+    margin-top:30px;
+    width: 20px;
+}
+
+div.style {
+    position: fixed;
+    height: 10vh;
+    width: 62vw;
+    top: 33vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    background: white;
+}
+
+div.style span {
+    position: relative;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    font-family: FZSKBXKK, KaiTi;
+    font-size: 2vh;
+    display: inline-block;
+}
+
+div.style div {
+    position: absolute;
+    height: 3vh;
+    width: 6.5vw;
+    top: 70%;
+    transform: translate(0, -50%);
+    font-family: FZSKBXKK, KaiTi;
+    text-align: center;
+    color: #765d3f;
+}
+
+div.style div.cipai {
+    width: 5vw;
+}
+
+div.style .selected {
+    background: #6a0403;
+    color: white;
+}
+
+div.style div span {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -30%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    font-family: FZSKBXKK, KaiTi;
+    font-size: 1vw;
+}
+
+div.style div.cipai span {
+    font-size: 0.8vw;
+}
+
+div.style div a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+div.input {
+    position: fixed;
+    top: 37%;
+    left: 31%;
+    width: 39%;
+    height: 4%;
+    border: solid #384ea1 1px;
+}
+
+div.input input {
+    position: relative;
+    background: transparent;
+    border: 0px solid;
+    left: 5%;
+    height: 90%;
+    width: 68%;
+    outline: transparent;
+    font-family: FZSKBXKK, KaiTi;
+    font-size: 15px;
+}
+
+div.input img {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+}
+
+div.input input.pic {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+div.input div.generate {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    height: 100%;
+    width: 20%;
+    background: #31708f;
+    display: inline-block;
+}
+
+div.input div.generate a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -25%);
+    width: 100%;
+    height: 100%;
+    color: white;
+    /*font-family: FZSKBXKK, KaiTi;*/
+    font-size: 1vw;
+    text-decoration: none;
+}
+
+div.result {
+    position: fixed;
+    top: 44.5%;
+    left: 50.5%;
+    transform: translate(-50%);
+    width: 37%;
+    height: 33.5%;
+}
+
+div.result div.poem-head {
+    position: relative;
+    /*width: 1;*/
+    height: 15%;
+    background: #31708f;
+}
+
+div.result div.poem-head span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*font-family: FZSKBXKK, KaiTi;*/
+    font-size: 1vw;
+    color: white;
+}
+
+div.result div.poem-result {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fdfcfc;
+    overflow-y: scroll;
+    white-space:pre
+}
+
+div.result div.poem-result span {
+    position: relative;
+    /*top: 12%;*/
+    left: 50%;
+    transform: translate(-50%);
+    display: inline-block;
+    margin-top: 4%;
+    font-family: FZSKBXKK, KaiTi;
+    font-size: 1.25vw;
+    color: #765d3f;
+    white-space:pre;
+}
+
+div.result div.poem-result span.chuchu {
+    left: 44%;
+    font-size:5px;
+    font-weight:400;
+    color:rgba(200,176,162,1);
+    line-height:23px;
+    cursor: pointer;
+}
+
+div.result div.poem-result span.chuchu p{
+    position: absolute;
+    width: 15vw;
+    line-height: 15px;
+    /*left: -4vw;*/
+    margin-top: -8px;
+    /*text-align: center;*/
+}
+
+div.result div.poem-result span.chuchu.selected-05{
+    left: 44%;
+    color:rgba(106,12,10,1);
+}
+
+div.result div.poem-result span a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+div.result div.poem-result span a.selected {
+    background: pink;
+}
+
+div.result div.poem-result div.rating {
+    position: absolute;
+    left: 20%;
+    /*bottom: 4vh;*/
+    height: 3.75vh;
+    width: 6vw;
+    background: #31708f;
+    margin-top: 4%;
+}
+
+div.result div.poem-result div.rating span {
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-family: FZSKBXKK, KaiTi;
+    font-size: 0.9vw;
+    color: white;
+    text-align: center;
+}
+
+div.result div.poem-result div.rating div {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 120%;
+    width: 60%;
+}
+
+div.result div.poem-result div.rating div span {
+    position: absolute;
+    writing-mode: tb-rl;
+    font-size: 0.7vw;
+    left: 25%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    color: #a9957b;
+}
+
+div.result div.poem-result div.rating div span.selected {
+    color: #31708f;
+}
+
+div.result div.poem-result div.rating div div.grade {
+    position: absolute;
+    float: left;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    width: 2vw;
+    height: 2vw;
+    background-color: #a9957b;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+}
+
+div.result div.poem-result div.rating div div.selected {
+    background-color: #31708f;
+}
+
+div.result div.poem-result div.rating div div.grade span {
+    writing-mode: initial;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+    font-family: FZSKBXKK, KaiTi;
+    color: white;
+    font-size: 16px;
+}
+
+div.report {
+    position: absolute;
+    left: 60%;
+    top: 80%;
+    width: 10%;
+    height: 11%;
+}
+
+div.report div {
+    position: relative;
+    width: 100%;
+    height: 25%;
+    background: #a9957b;
+    margin-bottom: 5%;
+}
+
+div.report div a {
+    position: absolute;
+    font-family: FZSKBXKK, KaiTi;
+    color: white;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8vw;
+    text-decoration: none;
+}
+
+div.ref {
+    position: absolute;
+    left: 10%;
+    top: 44.5%;
+    width: 20%;
+    height: 36%;
+    background: #fdfcfc;
+}
+
+div.ref p {
+    position: relative;
+    font-family: FZSKBXKK, KaiTi;
+    color: #765d3f;
+    left: 12%;
+    top: 5%;
+    width: 85%;
+}
+
+div.ref p.selected {
+    color: #31708f;
+    font-weight: 600;
+}
+
+div.ref div.change {
+    position: absolute;
+    right: 12%;
+    bottom: 8%;
+    height: 10%;
+    width: 24%;
+    background: #31708f;
+    display: block;
+}
+
+div.ref div.change a {
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    font-family: FZSKBXKK, KaiTi;
+    color: white;
+    text-decoration: none;
+}
+
+div.candidate {
+    position: absolute;
+    overflow-y: scroll;
+    left: 12.5%;
+    top: 38%;
+    width: 20%;
+    height: 45.5%;
+    background: #fdfcfc;
+}
+
+div.candidate p {
+    position: relative;
+    font-family: FZSKBXKK, KaiTi;
+    color: #765d3f;
+    left: 12%;
+    top: 18%;
+    cursor: pointer;
+}
+
+div.candidate p.selected {
+    color: #31708f;
+    font-weight: 600;
+}
+
+div.candidate div.update {
+    position: absolute;
+    right: 12%;
+    bottom: 4%;
+    height: 8%;
+    width: 24%;
+    background: #31708f;
+    display: block;
+}
+
+div.candidate div a {
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    font-family: FZSKBXKK, KaiTi;
+    color: white;
+    text-decoration: none;
+}
+
+div.candidate div.change {
+    position: absolute;
+    right: 42%;
+    bottom: 4%;
+    height: 8%;
+    width: 24%;
+    background: #31708f;
+    display: block;
+}
+
+div.fix {
+    position: absolute;
+    left: 71%;
+    top: 44.5%;
+    width: 15%;
+    height: 40%;
+    background: #fdfcfc;
+}
+
+div.fix div {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 0;
+}
+
+div.fix div p {
+    position: relative;
+    font-family: FZSKBXKK, KaiTi;
+    color: #31708f;
+    left: 12%;
+    top: 15%;
+}
+
+div.fix div div.checkbox {
+    position: relative;
+    left: 10%;
+    height: 15%;
+    width: 70%;
+}
+
+div.fix div div.checkbox div {
+    position: absolute;
+    display: inline-block;
+    border: 2px solid #765d3f;
+    height: 0.8vh;
+    width: 0.8vh;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 5%;
+    background: transparent;
+    cursor: pointer;
+}
+
+div.fix div div.checkbox span {
+    position: absolute;
+    left: 18%;
+    font-family: FZSKBXKK, KaiTi;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 0.85vw;
+    color: #765d3f;
+}
+
+div.fix div div.checkbox input {
+    position: absolute;
+    background: transparent;
+    border: 1px dashed #765d3f;
+    right: 10%;
+    padding: 0 0.5vw;
+    height: 95%;
+    width: 30%;
+    outline: transparent;
+    font-family: FZSKBXKK, KaiTi;
+    font-size: 15px;
+}
+
+div.candidate input {
+    position: absolute;
+    background: transparent;
+    border: 1px dashed #765d3f;
+    left: 12%;
+    top: 77%;
+    padding: 0 0.5vw;
+    height: 9%;
+    width: 65%;
+    outline: transparent;
+    font-family: FZSKBXKK, KaiTi;
+    font-size: 15px;
+}
+
+div.fix div.change {
+    position: absolute;
+    left: 65%;
+    bottom: 7%;
+    height: 10%;
+    width: 24%;
+    background: #31708f;
+    display: block;
+}
+
+div.fix div.change a {
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    font-family: FZSKBXKK, KaiTi;
+    color: white;
+    text-decoration: none;
+}
+
+img {
+    z-index: -1;
+}
+
+img#theme {
+    position: absolute;
+    left: 300px;
+    right: 300px;
+}
+
+img#logo {
+    position: fixed;
+    top: -20%;
+    transform: translate(-50%);
+    height: 140%;
+}
+
+img#bird {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 12.6%;
+}
+
+img#flower {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 25%;
+}
+
+img#mountain {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+img#zig {
+    position: fixed;
+    left: 12%;
+    bottom: 7.6%;
+    height: 4.3%;
+}
+
+img#zag {
+    position: fixed;
+    right: 12%;
+    bottom: 36%;
+    height: 4.3%;
+    z-index: 1;
+}
+
+div.copyright {
+    position: absolute;
+    left: 50%;
+    bottom: 7.5%;
+    transform: translate(-50%);
+}
+
+div.copyright img {
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+div.copyright p
+{
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    text-align: center;
+    font-family: FZSKBXKK, KaiTi;
+    color: #ab4c4b;
+    font-size: 9px;
+    font-weight: normal;
+}

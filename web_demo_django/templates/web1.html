@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://v3.bootcss.com/favicon.ico">
+
+    <title>自然语言处理之歌词生成系统</title>
+    <link href="/static/main.css" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'dashboard.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/font-awesome.min.css' %}">
+    </head>
+</head>
+<body>
+<img src="/static/img.png" style="position:absolute; left:300px; top:75px; width:1200px; height: 250px; border:5px" />
+<div class="asfafsadasfa">
+                <div class="input">
+
+        <form class="form-horizontal" action="{% url 'ueser' %}"  method="post">
+                <div class="form-group">
+
+                    <input type="text" id="publisher_name" name="publisher_name" placeholder="please type your question.(in English)">
+                    </div>
+
+
+                    <div class="generate">
+                        <input type="submit" class="btn btn-success"></input>
+                    </div>
+                {% csrf_token %}
+            </form>
+
+{#<img src="/static/4765EC7C5AC21205066162EC72742A21.JPG"  style="position:absolute;left:0px;top:50px;width: 300px">#}
+                    <input type="file" name="encourage_pic" accept="image/jpg, image/jpeg, image/png" style="visibility: hidden">
+
+    </div>
+    <div class="result">
+        <div class="poem-head">
+            <span>Answer :</span>
+        </div>
+        <div class="poem-result" style="white-space:pre">
+            <span id="poem_0">{{re}}</span> <br>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

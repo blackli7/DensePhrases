@@ -79,7 +79,7 @@ echo $SAVE_DIR
 ## 训练Demo
 通过项目中已训练好的预训练模型`densephrases-multi` 在简单的物理资料（`data/wiki_physics.json`，来源于English Wikipedia）上建立模型Demo.
 
-DensePhrases所使用的训练数据必须满足以下json格式:（具体见：sample/articles.json）
+DensePhrases所使用的训练数据必须满足以下json格式:（具体见：`sample/articles.json`）
 ```
 {
     "data": [
@@ -98,6 +98,8 @@ DensePhrases所使用的训练数据必须满足以下json格式:（具体见：
     ]
 }
 ```
+相关数据格式处理示例见：`data_process`
+
 
 运行以下命令，生成模型Demo
 ```bash
@@ -128,6 +130,18 @@ make step1_test
 输入完成后，回车，经过一段时间后模型会输出答案：
 <div align="left">
   <img alt="step1_test_a" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_a.jpg" width="750px">
+</div>
+
+进一步地，通过运行`web_demo_django`文件夹下或者自己编写的网页演示程序来将模型封装，进行交互式的输入输出：
+```bash
+# move into the web directory
+cd web_demo_django
+# run django server
+python manage.py runserver
+# then open the address(http://127.0.0.1:8000/) on your browser.
+```
+<div align="left">
+  <img alt="web_demo" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/web_demo.jpg" width="850px">
 </div>
 
 <!--## 项目应用
