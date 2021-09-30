@@ -110,7 +110,7 @@ make step1
 
 完成后会在命令台看到如下信息：
 <div align="left">
-  <img alt="step1" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1.jpg" width="500px">
+  <img alt="step1" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1.jpg" width="750px">
 </div>
 
 ## 测试Demo
@@ -123,11 +123,11 @@ make step1_test
 
 完成后会在命令台看到如下信息，按照提示输入问题文本：
 <div align="left">
-  <img alt="step1_test_q" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_q.jpg" width="500px">
+  <img alt="step1_test_q" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_q.jpg" width="750px">
 </div>
 输入完成后，回车，经过一段时间后模型会输出答案：
 <div align="left">
-  <img alt="step1_test_a" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_a.jpg" width="500px">
+  <img alt="step1_test_a" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_a.jpg" width="750px">
 </div>
 
 <!--## 项目应用
