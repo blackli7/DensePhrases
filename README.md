@@ -6,7 +6,7 @@
 本次NLP方向课程项目，旨在通过前沿学术成果，帮助同学们分三步：通过接触、理解、改进领域前沿工作，深刻体会NLP模型的基础框架及应用场景。在提高软件工程能力的同时，能够触摸到人工智能算法学术界的一些门路，最后达到开阔视野，增强底蕴的目的。-->
 
 #### 更新于
-**\*\*\*\*\* 2021.09.12 \*\*\*\*\***
+**\*\*\*\*\* 2021.09.30 \*\*\*\*\***
 
 **\*\*\*\*\* by lilingwei（lilingwei20@mails.ucas.ac.cn）\*\*\*\*\***
 
@@ -22,9 +22,7 @@
 
 
 ## 安装环境
-<!--本次NLP课程项目之所以选择面向“开放域问答”任务和“阅读理解”任务，也是继承了课程以往所使用的“对话机器人”项目的特点，希望能够让同学们感受到领域知识对现实生活的影响，以及未来可能的“强AI”时代所必不可少的环节。
-
-同时，本项目 <em>DensePhrases</em> 出自NLP大牛[陈丹琪](https://www.cs.princeton.edu/~danqic/)及其实验室之手，项目完整饱满，代码流畅规范，建议同学们能够同时好好欣赏并学习这些细节。-->
+<!--本次NLP课程项目之所以选择面向“开放域问答”任务和“阅读理解”任务，也是继承了课程以往所使用的“对话机器人”项目的特点，希望能够让同学们感受到领域知识对现实生活的影响，以及未来可能的“强AI”时代所必不可少的环节。同时，本项目 <em>DensePhrases</em> 出自NLP大牛[陈丹琪](https://www.cs.princeton.edu/~danqic/)及其实验室之手，项目完整饱满，代码流畅规范，建议同学们能够同时好好欣赏并学习这些细节。-->
 
 首先请安装好conda
 
@@ -79,7 +77,7 @@ echo $SAVE_DIR
 
 
 ## 训练Demo
-通过项目中已训练好的预训练模型`densephrases-multi` 在四篇短文语料库(`sample/articles.json`)上建立简单模型.
+通过项目中已训练好的预训练模型`densephrases-multi` 在简单的物理资料（`data/wiki_physics.json`，来源于English Wikipedia）上建立模型Demo.
 
 DensePhrases所使用的训练数据必须满足以下json格式:（具体见：sample/articles.json）
 ```
@@ -101,7 +99,7 @@ DensePhrases所使用的训练数据必须满足以下json格式:（具体见：
 }
 ```
 
-运行以下命令，训练模型
+运行以下命令，生成模型Demo
 ```bash
 # generate phrase vectors
 # build phrase index
@@ -112,7 +110,7 @@ make step1
 
 完成后会在命令台看到如下信息：
 <div align="left">
-  <img alt="step1" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1.jpg" width="750px">
+  <img alt="step1" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1.jpg" width="500px">
 </div>
 
 ## 测试Demo
@@ -123,16 +121,13 @@ make step1
 make step1_test
 ```
 
-完成后会在命令台看到如下信息：
+完成后会在命令台看到如下信息，按照提示输入问题文本：
 <div align="left">
-  <img alt="step1_test" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test.jpg" width="750px">
+  <img alt="step1_test_q" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_q.jpg" width="500px">
 </div>
-输入问题文本，回车，经过一段时间后模型会输出答案：
+输入完成后，回车，经过一段时间后模型会输出答案：
 <div align="left">
-  <img alt="step1_test_q" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_q.jpg" width="750px">
-</div>
-<div align="left">
-  <img alt="step1_test_a" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_a.jpg" width="450px">
+  <img alt="step1_test_a" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/step1_test_a.jpg" width="500px">
 </div>
 
 <!--## 项目应用

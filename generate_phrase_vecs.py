@@ -294,6 +294,11 @@ def main():
     parser.add_argument("--threads", type=int, default=20, help="multiple threads for converting example to features")
     args = parser.parse_args()
 
+    #remove the previous output_dir
+    if os.path.exists(args.output_dir):
+        os.system("rm -rf " + args.output_dir)
+        print("rm -rf " + args.output_dir)
+
     if args.doc_stride >= args.max_seq_length - args.max_query_length:
         logger.warning(
             "WARNING - You've set a doc stride which may be superior to the document length in some "

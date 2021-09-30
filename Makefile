@@ -503,7 +503,7 @@ step1:
 		--pretrained_name_or_path SpanBERT/spanbert-base-cased \
 		--data_dir ./ \
 		--cache_dir $(CACHE_DIR) \
-		--predict_file sample/articles.json \
+		--predict_file data/wiki_physics.json \
 		--do_dump \
 		--max_seq_length 512 \
 		--doc_stride 500 \
@@ -511,9 +511,9 @@ step1:
 		--filter_threshold -2.0 \
 		--append_title \
 		--load_dir $(SAVE_DIR)/densephrases-multi \
-		--output_dir $(SAVE_DIR)/densephrases-multi_sample
+		--output_dir $(SAVE_DIR)/densephrases-physics
 	python build_phrase_index.py \
-		$(SAVE_DIR)/densephrases-multi_sample/dump all \
+		$(SAVE_DIR)/densephrases-physics/dump all \
 		--replace \
 		--num_clusters 32 \
 		--fine_quant OPQ96 \
@@ -521,21 +521,12 @@ step1:
 		--vec_sample_ratio 1.0 \
 		--cuda
 	python scripts/preprocess/compress_metadata.py \
-		--input_dump_dir $(SAVE_DIR)/densephrases-multi_sample/dump/phrase \
-		--output_dir $(SAVE_DIR)/densephrases-multi_sample/dump
-	python eval_phrase_retrieval.py \
-		--run_mode eval \
-		--cuda \
-		--dump_dir $(SAVE_DIR)/densephrases-multi_sample/dump \
-		--index_dir start/32_flat_OPQ96 \
-		--query_encoder_path $(SAVE_DIR)/densephrases-multi \
-		--test_path sample/questions.json \
-		--save_pred \
-		--truecase
+		--input_dump_dir $(SAVE_DIR)/densephrases-physics/dump/phrase \
+		--output_dir $(SAVE_DIR)/densephrases-physics/dump
 
 #step1: to test the prediction of samples
 step1_test:
 	python step1_test_with_question.py \
-		--dump_dir $(SAVE_DIR)/densephrases-multi_sample/dump \
+		--dump_dir $(SAVE_DIR)/densephrases-physics/dump \
     	--index_dir start/32_flat_OPQ96 \
     	--query_encoder_path $(SAVE_DIR)/densephrases-multi
