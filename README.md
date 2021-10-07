@@ -222,6 +222,7 @@ DensePhrases所使用的训练数据必须满足以下json格式:（具体见：
 ### 3.演示Demo：-->
 
 ## FAQ
+### 1.
 Q: 在安装好conda后，使用conda安装工具时，报错PackagesNotFoundError：
 <div align="left">
   <img alt="faq1" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/faq1.jpg" width="750px">
@@ -234,6 +235,7 @@ conda config --add channels \ https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
 conda config --add channels \ https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 ```
 
+### 2.
 Q: git clone远程下载失败：
 <div align="left">
   <img alt="faq2" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/faq2.jpg" width="750px">
