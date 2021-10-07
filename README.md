@@ -22,7 +22,6 @@
 
 
 ## 安装环境
-<!--本次NLP课程项目之所以选择面向“开放域问答”任务和“阅读理解”任务，也是继承了课程以往所使用的“对话机器人”项目的特点，希望能够让同学们感受到领域知识对现实生活的影响，以及未来可能的“强AI”时代所必不可少的环节。同时，本项目 <em>DensePhrases</em> 出自NLP大牛[陈丹琪](https://www.cs.princeton.edu/~danqic/)及其实验室之手，项目完整饱满，代码流畅规范，建议同学们能够同时好好欣赏并学习这些细节。-->
 
 首先请安装好conda
 
@@ -37,7 +36,8 @@
 # Install torch with conda (remember to check your CUDA version)
 conda create -n densephrases python=3.7
 conda activate densephrases
-conda install pytorch=1.7.1 cudatoolkit=11.0 -c pytorch
+conda install pytorch=1.7.1 
+conda install cudatoolkit=11.0 -c pytorch
 
 # Install densephrases for course of UCAS
 git clone https://github.com/blackli7/DensePhrases.git
@@ -222,9 +222,30 @@ DensePhrases所使用的训练数据必须满足以下json格式:（具体见：
 ### 3.演示Demo：-->
 
 ## FAQ
+Q: 在安装好conda后，使用conda安装工具时，报错PackagesNotFoundError：
+<div align="left">
+  <img alt="faq1" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/faq1.jpg" width="750px">
+</div>
+A：尝试通过下面的命令增加下载源后再试一次：
+
+```bash
+conda config --add channels conda-forge
+conda config --add channels \ https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels \ https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+```
+
+Q: git clone远程下载失败：
+<div align="left">
+  <img alt="faq2" src="https://raw.githubusercontent.com/blackli7/DensePhrases/main/pic_files/faq2.jpg" width="750px">
+</div>
+A：多试几次，或在git命令前设置连接节点 GIT_CURL_VERBOSE=0 ，例如：
+
+```bash
+GIT_CURL_VERBOSE=0 git clone https://www.github.com/nvidia/apex.git
+```
 
 ## 问题反馈
-如遇到任何问题，可以直接询问课程老师和助教，或者联系我`(lilingwei：lilingwei20@mails.ucas.ac.cn)`，你也可以直接通过发起Github Issue发布相关问题，我会尽量及时回复。
+如遇到任何问题，可以直接询问课程老师和助教，或者联系我(`lilingwei：lilingwei20@mails.ucas.ac.cn`)，你也可以直接通过发起Github Issue发布相关问题，我会尽量及时回复。
 
 ## Reference
 Please cite the paper if you use DensePhrases in your work:
