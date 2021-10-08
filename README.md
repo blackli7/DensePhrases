@@ -2,6 +2,8 @@
 
 <em>DensePhrases</em> 是一项由Korea University和Princeton University联合完成的，基于短语级的英文文本匹配（召回）模型，面向于NLP中“开放域问答”和“阅读理解”任务。其项目[论文](https://arxiv.org/abs/2012.12624)被收录于ACL2021，你也可以直接通过其[Github项目地址](https://github.com/princeton-nlp/DensePhrases)来了解此模型，或使用其面向维基百科(2018.12.20)数据所训练的[Demo](http://densephrases.korea.ac.kr)来切身体会。
 
+本次项目需要GPU资源，若本地没有GPU，可使用[Google Colab](https://colab.research.google.com/)运行项目下`UCAS-DensePhrase.ipynb`脚本（推荐）
+
 <!--课程信息：2021~2022秋季学期 中国科学院大学 计算机科学与技术学院 高级软件工程 罗铁坚教授
 本次NLP方向课程项目，旨在通过前沿学术成果，帮助同学们分三步：通过接触、理解、改进领域前沿工作，深刻体会NLP模型的基础框架及应用场景。在提高软件工程能力的同时，能够触摸到人工智能算法学术界的一些门路，最后达到开阔视野，增强底蕴的目的。-->
 
@@ -54,7 +56,7 @@ pip install -r requirements.txt
 python setup.py develop
 ```
 
-设置相关环境变量（一路‘yes’）
+设置相关环境变量
 ```bash
 # Running config.sh will set the following three environment variables:
 # DATA_DIR: for datasets
