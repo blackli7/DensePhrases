@@ -4,6 +4,8 @@
 
 本次项目需要GPU资源，若本地没有GPU，可使用[Google Colab](https://colab.research.google.com/)运行项目下`UCAS-DensePhrase.ipynb`脚本（推荐）
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1oAJWzpIbT45cqXOwqDD5oElL-h679PBu?usp=sharing)
+
 <!--课程信息：2021~2022秋季学期 中国科学院大学 计算机科学与技术学院 高级软件工程 罗铁坚教授
 本次NLP方向课程项目，旨在通过前沿学术成果，帮助同学们分三步：通过接触、理解、改进领域前沿工作，深刻体会NLP模型的基础框架及应用场景。在提高软件工程能力的同时，能够触摸到人工智能算法学术界的一些门路，最后达到开阔视野，增强底蕴的目的。-->
 
